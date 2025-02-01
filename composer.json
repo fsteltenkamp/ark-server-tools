@@ -53,7 +53,7 @@
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite"
+            "npx concurrently -c \"#ff0000,#fff300,#05ff00,#00f9ff,#ed00ff\" \"php artisan config:clear && php artisan config:cache && php artisan cache:clear && php artisan serve --host 0.0.0.0\" \"php artisan queue:listen --timeout=0 --tries=1\" \"tail -f storage/logs/laravel.log\" \"npm run dev --host\" \"./meilisearch\" --names=server,queue,logs,npm,search"
         ]
     },
     "extra": {
