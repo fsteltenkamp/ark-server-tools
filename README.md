@@ -32,4 +32,24 @@ Web Notifications:
 [Forum Thread about Dynamic Config](https://survivetheark.com/index.php?/forums/topic/553016-added-additional-settings-to-the-dynamic-config/)  
 [Official Dynamic Config](http://arkdedicated.com/dynamicconfig.ini)  
 [Server Commandline Arguments](https://ark.fandom.com/wiki/Server_configuration#Command_line_arguments)  
-[Explanation of Web Notifications](https://ark.fandom.com/wiki/Web_Notifications)  
+[Explanation of Web Notifications](https://ark.fandom.com/wiki/Web_Notifications)
+
+## Components of this project
+- [App (Frontend)](app/README.md)
+
+## Setup
+> [!Warning]
+> It is out of the Scope of this Project to help you to set up everything.  
+> I am Providing you with a simple Docker setup. i wont go into detail on how you set up the rest of your Server, use a reverseproxy or anything else.  
+> There are enough Resources out there to learn how to set up something along those lines.
+
+To setup this project on your own Server you have to do the following:  
+
+0. Make Sure the [Prerequisites](#setup-prerequisites) are fulfilled.
+1. Clone the Git Project to a dedicated folder on your machine
+2. `docker compose up -d`
+
+While discouraged, its possible to run the webapp without docker. See the [Manual Setup Guide](app/README.md#manual-setup) for more info.
+
+### Setup Prerequisites
+- Packages: Docker, Docker Compose Plugin, Git
