@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('ase_dynamic_configs', function (Blueprint $table) {
-            $table->string('ActiveEventColors');
+            $table->string('ActiveEventColors')->nullable()->default('');
             $table->float('BabyCuddleIntervalMultiplier')->nullable()->default(1.0);
             $table->float('BabyFoodConsumptionSpeedMultiplier')->nullable()->default(1.0);
             $table->float('BabyImprintAmountMultiplier')->nullable()->default(1.0);
