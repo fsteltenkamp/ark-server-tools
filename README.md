@@ -16,6 +16,7 @@ Planned:
 - [ ] (ARK:SE Specific) - Live Tuning
 - [ ] (ARK:SE Specific) - Web Notifications
 - [ ] (ARK:SE Specific) - Config Generation: `GameUserSettings.ini`, `Game.ini`, `Startup Command Parameters`
+- [ ] (ARK:SE Specific) - RCON Console
 
 ### Explanation of the Features
 Dynamic Config:
