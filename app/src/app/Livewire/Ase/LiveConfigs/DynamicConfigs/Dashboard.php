@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Ase\DynamicConfig;
+namespace App\Livewire\Ase\LiveConfigs\DynamicConfigs;
 
 use Livewire\Component;
 use App\Models\AseDynamicConfig;
@@ -30,6 +30,6 @@ class Dashboard extends Component
 
     public function render()
     {
-        return view('livewire.ase.dynamic-config.dashboard');
+        return view('livewire.ase.live-configs.dynamic-configs.dashboard');
     }
 }

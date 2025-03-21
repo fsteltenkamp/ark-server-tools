@@ -7,6 +7,6 @@
     <x-slot name="heading">
         LiveConfigs / DynamicConfigs
     </x-slot>
-    <livewire:ase.dynamicConfig.dashboard :configs="$configs"/>
+    <livewire:ase.liveConfigs.dynamicConfigs.dashboard :configs="$configs"/>
 </x-frontend-layout>
 
