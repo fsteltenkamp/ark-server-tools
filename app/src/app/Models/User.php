@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\AseServer;
+use App\Models\AseCluster;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -45,5 +47,15 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function aseClusters()
+    {
+        return $this->hasMany(AseCluster::class);
+    }
+
+    public function aseServers()
+    {
+        return $this->hasMany(AseServer::class);
     }
 }
