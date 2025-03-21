@@ -31,9 +31,16 @@ class AseDynamicConfig extends Model
     public function generateIni()
     {
         // Pull all variables from the database, and assemble them into an INI file
-        $config = $this->all()->except(['id', 'name', 'description', 'user_id', 'created_at', 'updated_at']);
+        $config = collect($this->attributes);
+        $config->forget(['id', 'name', 'description', 'user_id', 'created_at', 'updated_at']);
         $ini = '';
         foreach ($config as $key => $value) {
+            if (is_bool($value)) {
+                $value = $value ? 'True' : 'False';
+            }
+            if (empty($value) || is_null($value)) {
+                continue;
+            }
             $ini .= "$key=$value\n";
         }
         return $ini;
