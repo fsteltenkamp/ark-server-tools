@@ -7,6 +7,8 @@ Route::get('/', function () {
 })->name('welcome');
 
 include __DIR__.'/web/auth.php';
+include __DIR__.'/web/backend/dashboard.php';
 include __DIR__.'/web/backend/config.php';
 include __DIR__.'/web/backend/user.php';
+include __DIR__.'/web/frontend/dashboard.php';
 include __DIR__.'/web/frontend/profile.php';
