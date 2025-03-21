@@ -20,7 +20,10 @@ class Main extends Component
                 'link' => 'frontend.liveConfigs.dynamicConfigs.list',
                 'icon' => 'planet',
             ],
-            'Live Tuning' => []
+            'Live Tuning' => [
+                'link' => 'frontend.liveConfigs.liveTuning.list',
+                'icon' => 'person-simple-run',
+            ]
         ],
         'Config Generation' => [
             'GameUserSettings.ini' => [],
