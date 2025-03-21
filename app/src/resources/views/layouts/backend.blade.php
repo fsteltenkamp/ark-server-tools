@@ -9,11 +9,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Scripts -->
     @vite([
-        'resources/css/themes/default.min.css',
-        'resources/css/app.css',
+        'resources/css/app-light.css',
         'resources/js/app.js',
-        'resources/js/editor.js',
-        'resources/js/charts.js'
     ])
 </head>
 
