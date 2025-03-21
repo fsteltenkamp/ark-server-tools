@@ -21,12 +21,12 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <a href="{{ route('web.auth.login') }}">Already have an account? Login</a>
+                                <a href="{{ route('login') }}">Already have an account? Login</a>
                             </div>
                         </div>
                         <div class="field">
                             <div class="control">
-                                <a href="{{ route('web.auth.register') }}">Don't have an account? Register</a>
+                                <a href="{{ route('register') }}">Don't have an account? Register</a>
                             </div>
                         </div>
                     </form>

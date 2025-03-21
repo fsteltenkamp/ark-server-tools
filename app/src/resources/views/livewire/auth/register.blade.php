@@ -75,7 +75,7 @@
                         
                         <div class="field">
                             <div class="control">
-                                <a href="{{ route('web.auth.login') }}">Already have an account? Login</a>
+                                <a href="{{ route('login') }}">Already have an account? Login</a>
                             </div>
                         </div>
                     </form>

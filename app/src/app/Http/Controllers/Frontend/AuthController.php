@@ -31,9 +31,9 @@ class AuthController
     public function logout()
     {
         if (!auth()->check()) {
-            return redirect()->route('web.auth.login');
+            return redirect()->route('login');
         }
         auth()->logout();
-        return redirect()->route('web.auth.login');
+        return redirect()->route('login');
     }
 }

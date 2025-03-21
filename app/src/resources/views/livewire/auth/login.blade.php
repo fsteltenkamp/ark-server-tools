@@ -37,12 +37,12 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <a href="{{ route('web.auth.forgot-password') }}">Forgot your password?</a>
+                                <a href="{{ route('forgot-password') }}">Forgot your password?</a>
                             </div>
                         </div>
                         <div class="field">
                             <div class="control">
-                                <a href="{{ route('web.auth.register') }}">Don't have an account? Register</a>
+                                <a href="{{ route('register') }}">Don't have an account? Register</a>
                             </div>
                         </div>
                     </form>

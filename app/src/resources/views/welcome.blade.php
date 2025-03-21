@@ -6,7 +6,7 @@
             <h1 class="title">
                 Ark:SE Server Configuration, Simplified
             </h1>
-            <a href="{{ route('web.auth.login') }}" class="button is-large is-light">Login</a>
+            <a href="{{ route('login') }}" class="button is-large is-light">Login</a>
         </div>
     </div>
 </section>
