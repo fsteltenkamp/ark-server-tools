@@ -1,2 +1,3 @@
-@extends('layouts.frontend')
-frontend dashboard
+<x-frontend-layout>
+    dashboard
+</x-frontend-layout>
