@@ -16,7 +16,10 @@ class Main extends Component
             'Clusters' => [],
         ],
         'Live Configs' => [
-            'Dynamic Configs' => [],
+            'Dynamic Configs' => [
+                'link' => 'frontend.liveConfigs.dynamicConfigs.list',
+                'icon' => 'planet',
+            ],
             'Live Tuning' => []
         ],
         'Config Generation' => [
