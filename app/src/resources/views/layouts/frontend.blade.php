@@ -16,9 +16,6 @@
 </head>
 
 <body>
-    @include('partials.loader')
-    @include('partials.navs.main')
-
     <div class="level" style="margin-top:60px;">
         <div class="level-left">
             @if (isset($breadcrumbs))
@@ -72,68 +69,8 @@
     <!-- Page Content -->
     <main class="container is-fluid" style="margin-bottom:80px;">
         <div class="card py-5">
-            {{ $slot }}
+            {{ $slot ?? '' }}
         </div>
     </main>
-
-    @include('partials.navs.footer')
 </body>
-<script>
-    function showChangelog() {
-        $('#changelog_popup').toggle();
-        axios.get(`{{route('api.html.frontend.changelog.plain')}}`)
-        .then(function (response) {
-            $('#changelog_text').text(response.data);
-        })
-    }
-</script>
-<!-- Bulma Modal -->
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        util.removeLoader();
-        // Functions to open and close a modal
-        function openModal($el) {
-            $el.classList.add('is-active');
-        }
-
-        function closeModal($el) {
-            $el.classList.remove('is-active');
-        }
-
-        function closeAllModals() {
-            (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-                closeModal($modal);
-            });
-        }
-
-        // Add a click event on buttons to open a specific modal
-        (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-            const modal = $trigger.dataset.target;
-            const $target = document.getElementById(modal);
-
-            $trigger.addEventListener('click', () => {
-                openModal($target);
-            });
-        });
-
-        // Add a click event on various child elements to close the parent modal
-        (document.querySelectorAll(
-            '.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || [])
-        .forEach(($close) => {
-            const $target = $close.closest('.modal');
-
-            $close.addEventListener('click', () => {
-                closeModal($target);
-            });
-        });
-
-        // Add a keyboard event to close all modals
-        document.addEventListener('keydown', (event) => {
-            if (event.key === "Escape") {
-                closeAllModals();
-            }
-        });
-    });
-</script>
-
 </html>
