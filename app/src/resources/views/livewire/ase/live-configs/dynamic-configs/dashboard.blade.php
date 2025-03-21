@@ -17,6 +17,9 @@
                 <tr>
                     <td>{{ $config->name }}</td>
                     <td>
+                        <a class="button is-small is-info" href="{{route('api.ase.liveConfig.dynamicConfig.getIni', $config->id)}}">
+                            <x-icon i="file-ini" spe="2"/>
+                        </a>
                         <button class="button is-small is-primary" href="{{route('frontend.liveConfigs.dynamicConfigs.edit', $config->id)}}" wire:navigate>
                             <x-icon i="pen" spe="2"/>
                         </button>
