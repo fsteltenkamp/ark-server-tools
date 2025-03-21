@@ -1,10 +1,12 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\PublicController;
 
-Route::get('/', function () {
-    return response()->json([
-        'App' => config('app.name'),
-        'Version' => config('app.version'),
-    ]);
-})->name('api.welcome');
+Route::get('/user', function (Request $request) {
+    return $request->user();
+})->middleware('auth:sanctum');
+
+Route::get('', [PublicController::class, 'index'])->name('api.welcome');
+Route::post('ingest', [PublicController::class, 'ingest'])->name('api.ingest');
