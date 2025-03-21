@@ -6,6 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class AseDynamicConfig extends Model
 {
+    protected $fillable = [
+        'name',
+        'description',
+        'ActiveEventColors','BabyCuddleIntervalMultiplier','BabyFoodConsumptionSpeedMultiplier',
+        'BabyImprintAmountMultiplier','BabyMatureSpeedMultiplier','bDisableDinoDecayPvE','bDisableStructureDecayPvE',
+        'bPvPDinoDecay','bPvPStructureDecay','bUseAlarmNotifications','CropGrowthSpeedMultiplier','CustomRecipeEffectivenessMultiplier',
+        'DinoCharacterFoodDrainMultiplier','DisableTimestampVerification','DisableWorldBuffs','DynamicUndermeshRegions',
+        'DynamicColorset','EggHatchSpeedMultiplier','EnableFullDump','EnableWorldBuffScaling','GMaxFlameThrowerServerTicksPerFrame',
+        'GlobalSpoilingTimeMultiplier','GUseServerNetSpeedCheck','HarvestAmountMultiplier','HexagonRewardMultiplier','MatingIntervalMultiplier',
+        'MatingSpeedMultiplier','NPCReplacements','PvEDinoDecayPeriodMultiplier','PvEStructureDecayPeriodMultiplier','StructureDamageMultiplier',
+        'TamingSpeedMultiplier','TributeDinoExpirationSeconds','TributeItemExpirationSeconds','XPMultiplier','WorldBuffScalingEfficacy'
+    ];
+
     public function owner()
     {
         return $this->belongsTo(User::class);
