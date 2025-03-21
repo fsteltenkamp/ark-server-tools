@@ -14,11 +14,11 @@
     ])
 </head>
 
-<body>
-    @include('partials.nav.top', ['title' => 'Ark:SE Server Management Panel' . ($heading ?? '')])
+<body style="height: 100vh">
+    <livewire:nav.top title="Ark:SE Server Management Panel" subtitle="{{$heading ?? 'Home/Dashboard'}}"/>
     <div class="columns">
         <div class="column is-one-fifth">
-            @include('partials.nav.main')
+            <livewire:nav.main/>
         </div>
         <div class="column">
             <div class="level">

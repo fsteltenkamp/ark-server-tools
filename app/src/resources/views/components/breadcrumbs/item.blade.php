@@ -4,6 +4,7 @@
     <a
         href="{{$href ?? '#'}}"
         @if ($isActive ?? false) aria-current="page" @endif
+        wire:navigate
     >
         @if (isset($icon))
             <x-icon i="{{$icon}}" spe="2" />
