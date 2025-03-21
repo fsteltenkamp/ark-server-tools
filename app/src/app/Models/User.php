@@ -58,4 +58,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(AseServer::class);
     }
+
+    public function aseDynamicConfigs()
+    {
+        return $this->hasMany(AseDynamicConfig::class);
+    }
 }
