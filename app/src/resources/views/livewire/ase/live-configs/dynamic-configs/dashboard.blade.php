@@ -17,7 +17,7 @@
                 <tr>
                     <td>{{ $config->name }}</td>
                     <td>
-                        <button class="button is-small is-primary" href="#" wire:navigate>
+                        <button class="button is-small is-primary" href="{{route('frontend.liveConfigs.dynamicConfigs.edit', $config->id)}}" wire:navigate>
                             <x-icon i="pen" spe="2"/>
                         </button>
                         <button class="button is-small is-danger" href="#" wire:click="deleteConfig({{ $config->id }})" wire:confirm='Are you sure you want to delete the Config "{{$config->name}}"?'

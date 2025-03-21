@@ -13,4 +13,12 @@ class DynamicConfigsController extends Controller
             'configs' => $configs,
         ]);
     }
+
+    public function edit($id)
+    {
+        $config = auth()->user()->aseDynamicConfigs()->findOrFail($id);
+        return view('frontend.liveConfigs.dynamicConfigs.edit', [
+            'config' => $config,
+        ]);
+    }
 }
