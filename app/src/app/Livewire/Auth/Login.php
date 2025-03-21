@@ -22,7 +22,7 @@ class Login extends Component
             return;
         }
 
-        return route('web.frontend.dashboard');
+        return route('frontend.dashboard');
     }
 
     public function render()
