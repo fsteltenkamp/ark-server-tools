@@ -8,11 +8,8 @@ Pull Requests Welcome!
 Please respect the License of this Project!
 
 ## Features
-Finished:
-- [x] (General) - Simple Docker Setup
+- [ ] (General) - Simple Docker Setup
 - [x] (ARK:SE Specific) - Dynamic Config
-
-Planned:
 - [ ] (ARK:SE Specific) - Live Tuning
 - [ ] (ARK:SE Specific) - Web Notifications
 - [ ] (ARK:SE Specific) - Config Generation: `GameUserSettings.ini`, `Game.ini`, `Startup Command Parameters`
