@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    @include('partials.nav.top', ['title' => $heading ?? ''])
+    @include('partials.nav.top', ['title' => 'Ark:SE Server Management Panel' . ($heading ?? '')])
     <div class="columns">
         <div class="column is-one-fifth">
             @include('partials.nav.main')
