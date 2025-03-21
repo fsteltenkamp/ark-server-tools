@@ -8,11 +8,14 @@ class DashboardController
 {
     public function index()
     {
-        $ownedAseClusters = AseCluster::where('owner_id', auth()->id())->get();
-        $ownedAseServers = AseServer::where('owner_id', auth()->id())->get();
+        $user = auth()->user();
+        $ownedAseClusters = $user->aseClusters();
+        $ownedAseServers = $user->aseServers();
+        $ownedAseClustersCount = $ownedAseClusters->count();
+        $ownedAseServersCount = $ownedAseServers->count();
         return view('frontend.dashboard', [
-            'ownedAseClusters' => $ownedAseClusters,
-            'ownedAseServers' => $ownedAseServers
+            'ownedAseClustersCount' => $ownedAseClustersCount,
+            'ownedAseServersCount' => $ownedAseServersCount
         ]);
     }
 }

@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\User;
+use App\Models\AseCluster;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -14,6 +16,9 @@ return new class extends Migration
         Schema::create('ase_servers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('description')->nullable();
+            $table->foreignIdFor(AseCluster::class)->onDelete('cascade');
+            $table->foreignIdFor(User::class)->onDelete('cascade');
             $table->timestamps();
         });
     }
