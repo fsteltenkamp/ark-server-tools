@@ -6,9 +6,7 @@
         @if ($isActive ?? false) aria-current="page" @endif
     >
         @if (isset($icon))
-            <span class="icon is-small">
-                <i class="{{$icon}}" aria-hidden="true"/>
-            </span>
+            <x-icon i="{{$icon}}" spe="2" />
         @endif
         <span>
             {{$slot}}
