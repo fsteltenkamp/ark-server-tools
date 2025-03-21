@@ -5,6 +5,8 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\AseServer;
 use App\Models\AseCluster;
+use App\Models\AseLiveTuning;
+use App\Models\AseDynamicConfig;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -62,5 +64,10 @@ class User extends Authenticatable
     public function aseDynamicConfigs()
     {
         return $this->hasMany(AseDynamicConfig::class);
+    }
+
+    public function aseLiveTunings()
+    {
+        return $this->hasMany(AseLiveTuning::class);
     }
 }
