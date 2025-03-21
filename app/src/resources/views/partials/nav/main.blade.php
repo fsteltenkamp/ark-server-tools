@@ -2,7 +2,7 @@
     <aside class="menu">
         <p class="menu-label">Cluster Management</p>
         <ul class="menu-list">
-            <li><a>Dashboard</a></li>
+            <li><a href="{{route('frontend.clusterManagement.dashboard')}}">Dashboard</a></li>
             <li><a>Clusters</a></li>
         </ul>
         <p class="menu-label">Live Configs</p>
