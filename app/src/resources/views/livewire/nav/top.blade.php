@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation" style="border-bottom: 2px solid #939393;">
     <div class="navbar-brand">
-        <a class="navbar-item" href="{{route('frontend.dashboard')}}">
-            {{$title ?? ''}}
+        <a class="navbar-item" href="{{route('frontend.dashboard')}}" wire:navigate>
+            {{$title ?? ''}} <small>{{$subtitle ?? ''}}</small>
         </a>
     </div>
     <div id="navTop" class="navbar-menu">
@@ -9,7 +9,7 @@
         </div>
 
         <div class="navbar-end">
-            @livewire('auth.userMenu')
+            <livewire:auth.user-menu/>
         </div>
     </div>
 </nav>
