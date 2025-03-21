@@ -27,4 +27,13 @@ class AuthController
         }
         return view('auth.forgot-password');
     }
+
+    public function logout()
+    {
+        if (!auth()->check()) {
+            return redirect()->route('web.auth.login');
+        }
+        auth()->logout();
+        return redirect()->route('web.auth.login');
+    }
 }
