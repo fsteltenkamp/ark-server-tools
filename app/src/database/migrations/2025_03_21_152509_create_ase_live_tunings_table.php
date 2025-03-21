@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('ase_live_tunings', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('description')->nullable();
+            $table->foreignIdFor(User::class)->onDelete('cascade');
             $table->timestamps();
         });
     }
