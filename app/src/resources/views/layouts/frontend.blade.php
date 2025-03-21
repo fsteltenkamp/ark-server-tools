@@ -15,12 +15,13 @@
 </head>
 
 <body>
+    @include('partials.nav.top', ['title' => $heading ?? ''])
     <div class="columns">
         <div class="column is-one-fifth">
             @include('partials.nav.main')
         </div>
         <div class="column">
-            <div class="level" style="margin-top:60px;">
+            <div class="level">
                 <div class="level-left">
                     @if (isset($breadcrumbs))
                         <div class="container is-fluid mt-5 mb-5 level-item">
@@ -40,36 +41,6 @@
                     @endif
                 </div>
             </div>
-        
-            @if (isset($header) || isset($heading))
-                <!-- Page Heading -->
-                @if (!empty($header))
-                    {{ $header }}
-                @else
-                    <section class="hero is-small">
-                        <div class="hero-body">
-                            <div class="container is-fluid">
-                                <h1 class="title">{{ $heading }}</h1>
-                                @if (isset($headingsubtitle))
-                                    <h2 class="subtitle">{{ $headingsubtitle }}</h2>
-                                @endif
-                            </div>
-                        </div>
-                        @if (isset($heading_buttons))
-                            <div class="hero-foot">
-                                <nav class="tabs">
-                                    <div class="container is-fluid">
-                                        <ul>
-                                            {{ $heading_buttons }}
-                                        </ul>
-                                    </div>
-                                </nav>
-                            </div>
-                        @endif
-                    </section>
-                @endif
-            @endif
-        
             <!-- Page Content -->
             <main class="container is-fluid" style="margin-bottom:80px;">
                 <div class="card py-5">
