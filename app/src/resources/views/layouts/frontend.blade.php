@@ -32,7 +32,7 @@
                     @endif
                 </div>
                 <div class="level-right">
-                    @if (isset($heading_buttons) && !isset($heading))
+                    @if (isset($heading_buttons))
                         <div class="container is-fluid level-right">
                             <ul>
                                 {{ $heading_buttons }}
