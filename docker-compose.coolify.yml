@@ -7,8 +7,6 @@ services:
       - "80"
     environment:
       - SERVICE_FQDN_APP_80
-    volumes:
-      - ./app/src:/app
   redis:
     image: redis:latest
     restart: unless-stopped
