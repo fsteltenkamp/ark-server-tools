@@ -3,26 +3,31 @@
 namespace App\Livewire\Auth;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Log;
 
 class Login extends Component
 {
     public $email;
     public $password;
     public $remember;
+    public $error;
 
     public function login()
     {
-        $this->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
-        if (!auth()->attempt(['email' => $this->email, 'password' => $this->password])) {
-            session()->flash('error', 'Invalid email or password');
+        // Validate Email
+        $emailValidateResult = filter_var($this->email, FILTER_VALIDATE_EMAIL);
+        if (!$emailValidateResult) {
+            $this->error = 'Invalid email';
             return;
         }
 
-        return route('frontend.dashboard');
+        if (!auth()->attempt(['email' => $this->email, 'password' => $this->password])) {
+            Log::debug('Login failed', ['email' => $this->email]);
+            $this->error = 'unknown email or wrong password';
+            return;
+        } else {
+            return redirect(route('frontend.dashboard'));
+        }
     }
 
     public function render()

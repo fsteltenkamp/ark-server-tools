@@ -3,9 +3,11 @@
         <div class="container">
             <div class="columns is-centered">
                 <div class="column is-5">
-                    @error('loginError')
-                        <p class="help is-danger">{{ $message }}</p>
-                    @enderror
+                    @if(!empty($error) && $error !== "")
+                        <div class="notification is-danger">
+                            {{ $error }}
+                        </div>
+                    @endif
                         @csrf
                         <div class="field">
                             <label class="label">Email</label>
@@ -17,7 +19,7 @@
                         <div class="field">
                             <label class="label">Password</label>
                             <div class="control">
-                                <input class="input" type="password" id="login_password" name="login_password" wire:model="password" required>
+                                <input class="input" type="password" id="login_password" name="login_password" wire:model="password" wire:keydown.enter="login" required>
                             </div>
                         </div>
 
@@ -32,7 +34,12 @@
 
                         <div class="field">
                             <div class="control">
-                                <button class="button is-primary" type="submit" wire:click="login">Login</button>
+                                <button
+                                    class="button is-primary"
+                                    type="submit"
+                                    wire:click="login"
+                                    wire:keydown.enter="login"
+                                >Login</button>
                             </div>
                         </div>
                         <div class="field">
