@@ -5,6 +5,8 @@ services:
     restart: unless-stopped
     expose:
       - "80"
+    environment:
+      - SERVICE_FQDN_APP_80
     volumes:
       - ./app/src:/app
   redis:
@@ -14,9 +16,9 @@ services:
     image: mariadb:latest
     restart: unless-stopped
     environment:
-      MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MARIADB_DATABASE: ${MYSQL_DATABASE}
-      MARIADB_USER: ${MYSQL_USER}
-      MARIADB_PASSWORD: ${MYSQL_PASSWORD}
+      - MARIADB_ROOT_PASSWORD=${SERVICE_PASSWORD_MYSQLROOT}
+      - MARIADB_DATABASE=arkservertools
+      - MARIADB_USER=${SERVICE_USER_MYSQL}
+      - MARIADB_PASSWORD=${SERVICE_PASSWORD_MYSQL}
     volumes:
       - arkservertools_database:/var/lib/mysql
