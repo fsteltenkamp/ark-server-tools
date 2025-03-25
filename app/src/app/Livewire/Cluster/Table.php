@@ -7,15 +7,11 @@ use App\Models\AseCluster;
 
 class Table extends Component
 {
-    public $clusters;
-
-    public function boot()
-    {
-        $this->clusters = auth()->user()->aseClusters;
-    }
+    public $clusters = [];
 
     public function render()
     {
+        $this->clusters = auth()->user()->aseClusters;
         return view('livewire.cluster.table');
     }
 
@@ -27,5 +23,14 @@ class Table extends Component
         $cluster->user_id = auth()->id();
         $cluster->save();
         $this->clusters->push($cluster);
+    }
+
+    public function deleteCluster($id)
+    {
+        $cluster = AseCluster::find($id);
+        $cluster->delete();
+        $this->clusters = $this->clusters->filter(function ($cluster) use ($id) {
+            return $cluster->id != $id;
+        });
     }
 }
