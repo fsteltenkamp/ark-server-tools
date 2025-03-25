@@ -35,6 +35,7 @@ Web Notifications:
 
 ## Components of this project
 - [App (Frontend)](app/README.md)
+- [ASV (Savegame Parsing)](https://github.com/miragedmuk/ASV) (Not Yet, but may possibly be added.)
 
 ## Setup
 > [!Warning]
