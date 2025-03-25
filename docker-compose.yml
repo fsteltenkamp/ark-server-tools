@@ -7,16 +7,25 @@ services:
     restart: unless-stopped
     expose:
       - "80"
+    environment:
+      DB_HOST: db
+      DB_USER: arkservertools
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_DATABASE: arkservertools
+      REDIS_HOST: redis
+    depends_on:
+      - redis
+      - db
   redis:
     image: redis:latest
     restart: unless-stopped
-  mariadb:
+  db:
     image: mariadb:latest
     restart: unless-stopped
     environment:
       MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MARIADB_DATABASE: ${MYSQL_DATABASE}
-      MARIADB_USER: ${MYSQL_USER}
+      MARIADB_DATABASE: arkservertools
+      MARIADB_USER: arkservertools
       MARIADB_PASSWORD: ${MYSQL_PASSWORD}
     volumes:
       - arkservertools_database:/var/lib/mysql
