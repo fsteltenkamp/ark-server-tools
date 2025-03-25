@@ -1,7 +1,6 @@
-
 services:
   app:
-    build: ./app/src
+    build: ./app
     restart: unless-stopped
     expose:
       - "80"
