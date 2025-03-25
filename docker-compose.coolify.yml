@@ -6,10 +6,13 @@ services:
       - "80"
     environment:
       - SERVICE_FQDN_APP_80
+    depends_on:
+      - redis
+      - db
   redis:
     image: redis:latest
     restart: unless-stopped
-  mariadb:
+  db:
     image: mariadb:latest
     restart: unless-stopped
     environment:
