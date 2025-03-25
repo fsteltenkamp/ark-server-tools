@@ -8,10 +8,21 @@ use App\Models\Server;
 class Table extends Component
 {
     public $servers = [];
+    public $clusterId;
+
+    public function mount($clusterId = null)
+    {
+        $this->clusterId = $clusterId;
+    }
 
     public function render()
     {
-        $this->servers = auth()->user()->servers;
+        if (!is_null($this->clusterId)) {
+            $this->servers = auth()->user()->servers->where('cluster_id', $this->clusterId);
+        } else {
+            $this->servers = auth()->user()->servers;
+        }
+        
         return view('livewire.server.table');
     }
 

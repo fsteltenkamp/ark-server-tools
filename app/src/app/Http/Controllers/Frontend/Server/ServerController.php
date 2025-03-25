@@ -6,21 +6,19 @@ use App\Http\Controllers\Controller;
 
 class ServerController extends Controller
 {
-    public function list()
+    public function list($clusterId = null)
     {
         $user = auth()->user();
-        $ownedServers = $user->servers();
         return view('frontend.server.list', [
-            'ownedServers' => $ownedServers,
+            'clusterId' => $clusterId,
         ]);
     }
 
     public function edit($id)
     {
         $user = auth()->user();
-        $server = $user->servers()->where('id', $id)->first();
         return view('frontend.server.edit', [
-            'server' => $server,
+            'serverId' => $id,
         ]);
     }
 }

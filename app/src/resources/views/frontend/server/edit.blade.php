@@ -7,5 +7,5 @@
     <x-slot name="heading">
         Server Management
     </x-slot>
-    <livewire:server.edit :server="$server"/>
+    <livewire:server.edit :serverId="$serverId"/>
 </x-frontend-layout>

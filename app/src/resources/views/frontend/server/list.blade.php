@@ -6,5 +6,5 @@
     <x-slot name="heading">
         Server Management
     </x-slot>
-    <livewire:server.table/>
+    <livewire:server.table :clusterId="$clusterId"/>
 </x-frontend-layout>

@@ -11,6 +11,11 @@ class Edit extends Component
     public $dotServer;
     public $clusters;
 
+    public function mount($serverId)
+    {
+        $this->server = auth()->user()->servers->find($serverId);
+    }
+
     public function render()
     {
         $this->server->pluck('id', 'user_id', 'created_at', 'updated_at');
