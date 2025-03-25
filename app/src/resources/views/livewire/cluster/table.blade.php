@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Cluster Name</th>
+                <th>Servers</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -16,6 +17,7 @@
             @foreach ($clusters as $cluster)
                 <tr>
                     <td>{{ $cluster->name }}</td>
+                    <td>{{ count($cluster->servers) }}</td>
                     <td>
                         <button class="button is-small is-primary" href="{{route('frontend.cluster.edit', $cluster->id)}}" wire:navigate>
                             <x-icon i="pen" spe="2"/>
