@@ -9,18 +9,18 @@ class ClusterController extends Controller
     public function list()
     {
         $user = auth()->user();
-        $ownedAseClusters = $user->aseClusters();
-        $ownedAseClustersCount = $ownedAseClusters->count();
+        $ownedClusters = $user->clusters();
+        $ownedClustersCount = $ownedClusters->count();
         return view('frontend.cluster.list', [
-            'ownedAseClusters' => $ownedAseClusters,
-            'ownedAseClustersCount' => $ownedAseClustersCount,
+            'ownedClusters' => $ownedClusters,
+            'ownedClustersCount' => $ownedClustersCount,
         ]);
     }
 
     public function edit($id)
     {
         $user = auth()->user();
-        $cluster = $user->aseClusters()->where('id', $id)->first();
+        $cluster = $user->clusters()->where('id', $id)->first();
         return view('frontend.cluster.edit', [
             'cluster' => $cluster,
         ]);

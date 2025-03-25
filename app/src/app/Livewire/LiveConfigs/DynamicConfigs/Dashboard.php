@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Livewire\Ase\LiveConfigs\LiveTuning;
+namespace App\Livewire\LiveConfigs\DynamicConfigs;
 
 use Livewire\Component;
-use App\Models\AseLiveTuning;
+use App\Models\DynamicConfig;
 
 class Dashboard extends Component
 {
@@ -11,9 +11,9 @@ class Dashboard extends Component
 
     public function createConfig()
     {
-        $config = new AseLiveTuning();
+        $config = new DynamicConfig();
         $config->name = 'New Config';
-        $config->description = 'New Description';
+        $config->description = 'A new configuration';
         $config->user_id = auth()->id();
         $config->save();
         $this->configs->push($config);
@@ -21,7 +21,7 @@ class Dashboard extends Component
 
     public function deleteConfig($configId)
     {
-        $config = AseLiveTuning::find($configId);
+        $config = DynamicConfig::find($configId);
         $config->delete();
         $this->configs = $this->configs->filter(function ($c) use ($configId) {
             return $c->id !== $configId;
@@ -30,6 +30,6 @@ class Dashboard extends Component
 
     public function render()
     {
-        return view('livewire.ase.live-configs.live-tuning.dashboard');
+        return view('livewire.live-configs.dynamic-configs.dashboard');
     }
 }

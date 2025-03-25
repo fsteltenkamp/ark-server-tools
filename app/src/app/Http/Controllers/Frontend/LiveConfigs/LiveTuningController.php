@@ -9,7 +9,7 @@ class LiveTuningController extends Controller
     public function list()
     {
         $user = auth()->user();
-        $configs = $user->aseLiveTunings;
+        $configs = $user->liveTunings;
         return view('frontend.liveConfigs.liveTuning.list', [
             'configs' => $configs,
         ]);

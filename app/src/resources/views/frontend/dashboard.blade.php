@@ -5,6 +5,6 @@
     <x-slot name="heading">
         Home / Dashboard
     </x-slot>
-    Managing {{$ownedAseClustersCount ?? 'N/A'}} Clusters for you.<br/>
-    Managing {{$ownedAseServersCount ?? 'N/A'}} Servers for you.<br/>
+    Managing {{$ownedClustersCount ?? 'N/A'}} Clusters for you.<br/>
+    Managing {{$ownedServersCount ?? 'N/A'}} Servers for you.<br/>
 </x-frontend-layout>

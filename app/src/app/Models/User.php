@@ -3,10 +3,10 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Models\AseServer;
-use App\Models\AseCluster;
-use App\Models\AseLiveTuning;
-use App\Models\AseDynamicConfig;
+use App\Models\Server;
+use App\Models\Cluster;
+use App\Models\LiveTuning;
+use App\Models\DynamicConfig;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -51,23 +51,23 @@ class User extends Authenticatable
         ];
     }
 
-    public function aseClusters()
+    public function clusters()
     {
-        return $this->hasMany(AseCluster::class);
+        return $this->hasMany(Cluster::class);
     }
 
-    public function aseServers()
+    public function servers()
     {
-        return $this->hasMany(AseServer::class);
+        return $this->hasMany(Server::class);
     }
 
-    public function aseDynamicConfigs()
+    public function dynamicConfigs()
     {
-        return $this->hasMany(AseDynamicConfig::class);
+        return $this->hasMany(DynamicConfig::class);
     }
 
-    public function aseLiveTunings()
+    public function liveTunings()
     {
-        return $this->hasMany(AseLiveTuning::class);
+        return $this->hasMany(LiveTuning::class);
     }
 }

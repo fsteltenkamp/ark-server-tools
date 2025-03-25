@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 
-class AseLiveTuning extends Model
+class LiveTuning extends Model
 {
     public function owner()
     {

@@ -7,5 +7,5 @@
     <x-slot name="heading">
         LiveConfigs / LiveTuning
     </x-slot>
-    <livewire:ase.liveConfigs.liveTuning.dashboard :configs="$configs"/>
+    <livewire:liveConfigs.liveTuning.dashboard :configs="$configs"/>
 </x-frontend-layout>

@@ -20,9 +20,9 @@
                 <div class="control">
                     <select
                         class="input"
-                        id="ase_cluster_id"
-                        name="ase_cluster_id"
-                        wire:model="dotServer.ase_cluster_id"
+                        id="cluster_id"
+                        name="cluster_id"
+                        wire:model="dotServer.cluster_id"
                     >
                         <option value="">Select a Cluster</option>
                         @foreach ($clusters as $cluster)

@@ -3,15 +3,14 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\AseCluster;
+use App\Models\Server;
 use Illuminate\Database\Eloquent\Model;
 
-class AseServer extends Model
+class Cluster extends Model
 {
     protected $fillable = [
         'name',
-        'description',
-        'ase_cluster_id',
+        'description'
     ];
     
     public function owner()
@@ -19,8 +18,8 @@ class AseServer extends Model
         return $this->belongsTo(User::class);
     }
     
-    public function cluster()
+    public function servers()
     {
-        return $this->belongsTo(AseCluster::class);
+        return $this->hasMany(Server::class);
     }
 }

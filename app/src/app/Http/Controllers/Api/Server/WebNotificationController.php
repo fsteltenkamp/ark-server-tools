@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Ase\Server;
+namespace App\Http\Controllers\Api\Server;
 
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;

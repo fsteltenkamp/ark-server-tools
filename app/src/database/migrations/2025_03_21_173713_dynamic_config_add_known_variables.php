@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('ase_dynamic_configs', function (Blueprint $table) {
+        Schema::table('dynamic_configs', function (Blueprint $table) {
             $table->string('ActiveEventColors')->nullable()->default('');
             $table->float('BabyCuddleIntervalMultiplier')->nullable()->default(1.0);
             $table->float('BabyFoodConsumptionSpeedMultiplier')->nullable()->default(1.0);
@@ -56,7 +56,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('ase_dynamic_configs', function (Blueprint $table) {
+        Schema::table('dynamic_configs', function (Blueprint $table) {
             $table->dropColumn('ActiveEventColors');
             $table->dropColumn('BabyCuddleIntervalMultiplier');
             $table->dropColumn('BabyFoodConsumptionSpeedMultiplier');

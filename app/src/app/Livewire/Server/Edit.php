@@ -15,7 +15,7 @@ class Edit extends Component
     {
         $this->server->pluck('id', 'user_id', 'created_at', 'updated_at');
         $this->dotServer = Arr::dot($this->server->toArray());
-        $this->clusters = auth()->user()->aseClusters;
+        $this->clusters = auth()->user()->clusters;
         return view('livewire.server.edit');
     }
 

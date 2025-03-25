@@ -8,7 +8,7 @@ class DynamicConfigsController extends Controller
     public function list()
     {
         $user = auth()->user();
-        $configs = $user->aseDynamicConfigs;
+        $configs = $user->dynamicConfigs;
         return view('frontend.liveConfigs.dynamicConfigs.list', [
             'configs' => $configs,
         ]);
@@ -16,7 +16,7 @@ class DynamicConfigsController extends Controller
 
     public function edit($id)
     {
-        $config = auth()->user()->aseDynamicConfigs()->findOrFail($id);
+        $config = auth()->user()->dynamicConfigs()->findOrFail($id);
         return view('frontend.liveConfigs.dynamicConfigs.edit', [
             'config' => $config,
         ]);

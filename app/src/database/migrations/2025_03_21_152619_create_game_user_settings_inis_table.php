@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ase_game_user_settings_inis', function (Blueprint $table) {
+        Schema::create('game_user_settings_inis', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -22,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ase_game_user_settings_inis');
+        Schema::dropIfExists('game_user_settings_inis');
     }
 };

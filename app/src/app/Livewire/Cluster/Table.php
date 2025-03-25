@@ -3,7 +3,7 @@
 namespace App\Livewire\Cluster;
 
 use Livewire\Component;
-use App\Models\AseCluster;
+use App\Models\Cluster;
 
 class Table extends Component
 {
@@ -11,13 +11,13 @@ class Table extends Component
 
     public function render()
     {
-        $this->clusters = auth()->user()->aseClusters;
+        $this->clusters = auth()->user()->clusters;
         return view('livewire.cluster.table');
     }
 
     public function createCluster()
     {
-        $cluster = new AseCluster();
+        $cluster = new Cluster();
         $cluster->name = 'New Cluster';
         $cluster->description = 'A new cluster';
         $cluster->user_id = auth()->id();
@@ -27,7 +27,7 @@ class Table extends Component
 
     public function deleteCluster($id)
     {
-        $cluster = AseCluster::find($id);
+        $cluster = Cluster::find($id);
         $cluster->delete();
         $this->clusters = $this->clusters->filter(function ($cluster) use ($id) {
             return $cluster->id != $id;

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Models\Cluster;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -12,10 +13,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ase_dynamic_configs', function (Blueprint $table) {
+        Schema::create('servers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('description')->nullable();
+            $table->foreignIdFor(Cluster::class)->onDelete('cascade');
             $table->foreignIdFor(User::class)->onDelete('cascade');
             $table->timestamps();
         });
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ase_dynamic_configs');
+        Schema::dropIfExists('servers');
     }
 };

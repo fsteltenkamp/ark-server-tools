@@ -8,6 +8,6 @@
     <x-slot name="heading">
         LiveConfigs / DynamicConfigs
     </x-slot>
-    <livewire:ase.liveConfigs.dynamicConfigs.edit :config="$config"/>
+    <livewire:liveConfigs.dynamicConfigs.edit :config="$config"/>
 </x-frontend-layout>
 

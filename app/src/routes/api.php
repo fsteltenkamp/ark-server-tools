@@ -11,4 +11,4 @@ Route::get('/user', function (Request $request) {
 Route::get('', [PublicController::class, 'index'])->name('api.welcome');
 Route::post('ingest', [PublicController::class, 'ingest'])->name('api.ingest');
 
-include __DIR__.'/api/ase/liveConfig/dynamicConfig.php';
+include __DIR__.'/api/liveConfig/dynamicConfig.php';
