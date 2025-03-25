@@ -13,5 +13,6 @@ include __DIR__.'/web/backend/user.php';
 include __DIR__.'/web/frontend/dashboard.php';
 include __DIR__.'/web/frontend/profile.php';
 include __DIR__.'/web/frontend/cluster.php';
+include __DIR__.'/web/frontend/server.php';
 include __DIR__.'/web/frontend/liveConfigs/dynamicConfigs.php';
 include __DIR__.'/web/frontend/liveConfigs/liveTuning.php';

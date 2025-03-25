@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class AseServer extends Model
 {
+    protected $fillable = [
+        'name',
+        'description',
+        'ase_cluster_id',
+    ];
+    
     public function owner()
     {
         return $this->belongsTo(User::class);

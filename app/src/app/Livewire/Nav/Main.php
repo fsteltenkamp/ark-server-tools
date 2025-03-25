@@ -18,7 +18,11 @@ class Main extends Component
                 'icon' => 'network',
             ],
             'Servers' => [
-                'activeRoutes' => [],
+                'link' => 'frontend.server.list',
+                'activeRoutes' => [
+                    'frontend.server.list',
+                    'frontend.server.edit'
+                ],
                 'icon' => 'computer-tower',
             ],
         ],
