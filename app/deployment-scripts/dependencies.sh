@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd /app
 rm -rf vendor node_modules
 composer install --no-dev --optimize-autoloader
