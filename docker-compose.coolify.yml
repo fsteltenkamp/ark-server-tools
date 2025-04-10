@@ -21,6 +21,9 @@ services:
     image: mariadb:latest
     restart: unless-stopped
     environment:
+      - SERVICE_USER_MYSQL=${SERVICE_USER_MYSQL}
+      - SERVICE_PASSWORD_MYSQL=${SERVICE_PASSWORD_MYSQL}
+      - SERVICE_PASSWORD_MYSQLROOT=${SERVICE_PASSWORD_MYSQLROOT}
       - MARIADB_ROOT_PASSWORD=${SERVICE_PASSWORD_MYSQLROOT}
       - MARIADB_DATABASE=arkservertools
       - MARIADB_USER=${SERVICE_USER_MYSQL}
