@@ -8,3 +8,7 @@ for file in /docker-entrypoint-init.d/*; do
         "$file"           # Execute the file directly
     fi
 done
+
+# start caddy
+echo "Starting Caddy server..."
+exec frankenphp run --config /etc/caddy/Caddyfile "$@"

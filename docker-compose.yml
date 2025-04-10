@@ -1,5 +1,7 @@
 volumes:
-  arkservertools_database: null
+  mariadb_data: null
+  caddy_data: null
+  caddy_config: null
 
 services:
   app:
@@ -10,9 +12,12 @@ services:
     environment:
       DB_HOST: db
       DB_USER: arkservertools
-      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_PASSWORD: ${MARIADB_PASSWORD}
       DB_DATABASE: arkservertools
       REDIS_HOST: redis
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
     depends_on:
       - redis
       - db
@@ -23,9 +28,9 @@ services:
     image: mariadb:latest
     restart: unless-stopped
     environment:
-      MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
       MARIADB_DATABASE: arkservertools
       MARIADB_USER: arkservertools
-      MARIADB_PASSWORD: ${MYSQL_PASSWORD}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
     volumes:
-      - arkservertools_database:/var/lib/mysql
+      - mariadb_data:/var/lib/mysql
