@@ -11,4 +11,4 @@ done
 
 # start caddy
 echo "Starting Caddy server..."
-caddy run --config /etc/caddy/Caddyfile --adapter caddyfile
+exec docker-php-entrypoint "$@"
