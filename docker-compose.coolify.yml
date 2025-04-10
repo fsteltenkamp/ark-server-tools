@@ -1,3 +1,8 @@
+volumes:
+  mariadb_data: null
+  caddy_data: null
+  caddy_config: null
+
 services:
   app:
     build: ./app
@@ -11,6 +16,9 @@ services:
       - DB_PASSWORD=${SERVICE_PASSWORD_MYSQL}
       - DB_DATABASE=arkservertools
       - REDIS_HOST=redis
+    volumes:
+      - caddy_data:/data
+      - caddy_config:/config
     depends_on:
       - redis
       - db
@@ -29,4 +37,4 @@ services:
       - MARIADB_USER=${SERVICE_USER_MYSQL}
       - MARIADB_PASSWORD=${SERVICE_PASSWORD_MYSQL}
     volumes:
-      - arkservertools_database:/var/lib/mysql
+      - mariadb_data:/var/lib/mysql
