@@ -10,7 +10,7 @@ services:
     environment:
       DB_HOST: db
       DB_USER: arkservertools
-      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_PASSWORD: ${MARIADB_PASSWORD}
       DB_DATABASE: arkservertools
       REDIS_HOST: redis
     depends_on:
@@ -23,9 +23,9 @@ services:
     image: mariadb:latest
     restart: unless-stopped
     environment:
-      MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
       MARIADB_DATABASE: arkservertools
       MARIADB_USER: arkservertools
-      MARIADB_PASSWORD: ${MYSQL_PASSWORD}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD}
     volumes:
       - arkservertools_database:/var/lib/mysql
