@@ -11,4 +11,4 @@ done
 
 # start caddy
 echo "Starting Caddy server..."
-exec docker-php-entrypoint "$@"
+exec frankenphp run --config /etc/caddy/Caddyfile "$@"
