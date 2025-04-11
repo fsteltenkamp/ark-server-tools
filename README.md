@@ -56,6 +56,12 @@ To setup this project on your own Server you have to do the following:
 0. Make Sure the [Prerequisites](#setup-prerequisites) are fulfilled.
 1. Clone the Git Project to a dedicated folder on your machine
 2. `docker compose up -d`
+  
+Default Admin User:
+```
+E-Mail: admin@ark-server.tools
+Password: admin
+```
 
 While discouraged, its possible to run the webapp without docker. See the [Manual Setup Guide](app/README.md#manual-setup) for more info.
 
