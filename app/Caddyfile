@@ -1,6 +1,5 @@
 {
 	frankenphp
-	debug
 }
 
 :80 {
