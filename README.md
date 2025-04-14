@@ -9,24 +9,32 @@ Please respect the License of this Project!
 
 ## Features
 - [ ] (General) - Simple Docker Setup
-- [x] (ARK:SE Specific) - Dynamic Config
-- [ ] (ARK:SE Specific) - Live Tuning
-- [ ] (ARK:SE Specific) - Web Notifications
-- [ ] (ARK:SE Specific) - Config Generation: `GameUserSettings.ini`, `Game.ini`, `Startup Command Parameters`
-- [ ] (ARK:SE Specific) - RCON Console
+- [x] Dynamic Config
+- [ ] Live Tuning
+- [ ] Web Notifications
+- [ ] Config Generation: `GameUserSettings.ini`, `Game.ini`, `Startup Command Parameters`
+- [ ] RCON Console
+- [ ] "Live" Map
 
 ### Explanation of the Features
 Dynamic Config:
-- A way to tell ARK:SE Servers what settings to use LIVE!  Meaning the Server doesnt have to restart to apply these settings.  
-  AFAIK, this is the Way the Official ARK Servers are running. Seeing as how the Official Config is linked in the Wiki.
+- A way to tell ARK:SE Servers what settings to use LIVE!  Meaning the Server doesnt have to restart to apply these settings. AFAIK, this is the Way the Official ARK Servers are running. Seeing as how the Official Config is linked in the Wiki.
 
 Live Tuning:
-- This is another Config file that allows Admins to set some Parameters for the ARK Server live.
-  This is a little different in that it doesnt configure the server itself, rather Configuring Items.
+- This is another Config file that allows Admins to set some Parameters for the ARK Server live. This is a little different in that it doesnt configure the server itself, rather Configuring Items.
 
 Web Notifications:
-- This is an ingame Feature that allows the ARK Server to send notifications to an external Service (This App for example) when certain events happen ingame.
-  These are focussed on Tribe Logs. I'll have to play around with this feature to see what exactly the server sends.
+- This is an ingame Feature that allows the ARK Server to send notifications to an external Service (This App for example) when certain events happen ingame. These are focussed on Tribe Logs. I'll have to play around with this feature to see what exactly the server sends.
+
+Config Generation:  
+- Basically a Web-Version of an "Ark Server Manager" That allows you to easily tick boxes in a clean interface instead of wrangling Config options. Then Download those configurations and upload them to your server. Optionally i can imagine that a simple ftp connection could be implemented if a server has one.  
+
+RCON Console:
+- I dont think there is much explanation necessary, send commands to your server.
+
+"Live" Map:
+- I currently dont know a good way to get truly live data like player/tames/wild dinos/structures locations etc. all this can be extracted from the savegame. Im Imagining a feature where the savegame is pulled in a configurable interval and the "Live" Map is then updated based on the content of that Savegame file.
+
 ## Links to Resources i found regarding these Features
 [Forum Thread about Dynamic Config](https://survivetheark.com/index.php?/forums/topic/553016-added-additional-settings-to-the-dynamic-config/)  
 [Official Dynamic Config](http://arkdedicated.com/dynamicconfig.ini)  
@@ -48,6 +56,12 @@ To setup this project on your own Server you have to do the following:
 0. Make Sure the [Prerequisites](#setup-prerequisites) are fulfilled.
 1. Clone the Git Project to a dedicated folder on your machine
 2. `docker compose up -d`
+  
+Default Admin User:
+```
+E-Mail: admin@ark-server.tools
+Password: admin
+```
 
 While discouraged, its possible to run the webapp without docker. See the [Manual Setup Guide](app/README.md#manual-setup) for more info.
 

@@ -1,10 +1,9 @@
 {
 	frankenphp
-	debug
 }
 
 :80 {
-	root * /app
+	root * /app/public
 	encode zstd br gzip
 	php_server
 }
