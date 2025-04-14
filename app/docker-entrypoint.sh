@@ -6,5 +6,9 @@ for file in /docker-entrypoint-init.d/*; do
         echo "Running $file"
         chmod +x "$file"  # Ensure the file is executable
         "$file"           # Execute the file directly
+        # wait until the file is finished
+        while [ -d /proc/$(pgrep -f "$file") ]; do
+            sleep 1
+        done
     fi
 done
