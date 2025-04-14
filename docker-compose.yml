@@ -11,7 +11,7 @@ services:
       - "${PUBLISHED_PORT:-8080}:80"
     environment:
       DB_HOST: db
-      DB_USER: arkservertools
+      DB_USERNAME: arkservertools
       DB_PASSWORD: ${MARIADB_PASSWORD}
       DB_DATABASE: arkservertools
       REDIS_HOST: redis
