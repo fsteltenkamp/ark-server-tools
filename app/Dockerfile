@@ -18,6 +18,7 @@ RUN apt-get update && \
         git \
         zip \
         unzip \
+        procps \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
