@@ -2,6 +2,8 @@ FROM dunglas/frankenphp:php8.4
 
 # create directories
 RUN mkdir -p /docker-entrypoint-init.d
+RUN mkdir -p /docker-entrypoint-init.logs
+RUN mkdir -p /docker-entrypoint-init.workdir
 
 # Copy files
 COPY ./src /app
@@ -18,6 +20,7 @@ RUN apt-get update && \
         git \
         zip \
         unzip \
+        procps \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

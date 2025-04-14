@@ -12,7 +12,7 @@ services:
     environment:
       - SERVICE_FQDN_APP_80
       - DB_HOST=db
-      - DB_USER=${SERVICE_USER_MYSQL}
+      - DB_USERNAME=${SERVICE_USER_MYSQL}
       - DB_PASSWORD=${SERVICE_PASSWORD_MYSQL}
       - DB_DATABASE=arkservertools
       - REDIS_HOST=redis

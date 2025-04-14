@@ -9,6 +9,6 @@ The Main Component (Webapp) Can be used standalone although this is not advised,
 ## Admin User:
 To Manually create a Admin user you need to use the following Command:
 ```
-php artisan db:seed --class=AdminUserSeeder
+php artisan user:create-admin
 ```
 If you want to reset the Admin-User to Default Login Details, add a `--force` at the end of the command.
