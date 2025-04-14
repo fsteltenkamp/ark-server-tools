@@ -2,6 +2,8 @@ FROM dunglas/frankenphp:php8.4
 
 # create directories
 RUN mkdir -p /docker-entrypoint-init.d
+RUN mkdir -p /docker-entrypoint-init.logs
+RUN mkdir -p /docker-entrypoint-init.workdir
 
 # Copy files
 COPY ./src /app
