@@ -15,7 +15,7 @@
 </head>
 
 <body style="height: 100vh">
-    <livewire:nav.top title="Ark:SE Server Management Panel" subtitle="{{$heading ?? 'Home/Dashboard'}}"/>
+    <livewire:nav.top title="Ark Server Management Panel" subtitle="{{$heading ?? 'Home/Dashboard'}}"/>
     <div class="columns">
         <div class="column is-one-fifth">
             <livewire:nav.main/>
