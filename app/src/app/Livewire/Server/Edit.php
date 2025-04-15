@@ -11,9 +11,9 @@ class Edit extends Component
     public $dotServer;
     public $clusters;
 
-    public function mount($serverId)
+    public function mount($server)
     {
-        $this->server = auth()->user()->servers->find($serverId);
+        $this->server = $server;
     }
 
     public function render()
