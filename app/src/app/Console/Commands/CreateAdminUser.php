@@ -24,8 +24,11 @@ class CreateAdminUser extends Command
     {
         if (User::where('email', 'admin@ark-server.tools')->exists()) {
             if ($this->option('force')) {
-                User::where('email', 'admin@ark-server.tools')->delete();
-                $this->info('Existing admin user deleted.');
+                $u = User::where('email', 'admin@ark-server.tools')->first();
+                $u->password = Hash::make('admin');
+                $u->save();
+                $this->info('Admin user password reset successfully.');
+                return Command::SUCCESS;
             } else {
                 $this->info('Admin user already exists. Skipping creation.');
                 return Command::SUCCESS;
