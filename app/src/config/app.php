@@ -2,6 +2,12 @@
 
 return [
 
+    'trusted_proxies' => [
+        ...array_filter(
+            explode(',', env('TRUSTED_PROXIES', ''))
+        )
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
