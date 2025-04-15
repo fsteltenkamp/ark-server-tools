@@ -25,7 +25,7 @@
                         <button class="button is-small is-primary" href="{{route('frontend.server.edit', $server->id)}}" wire:navigate>
                             <x-icon i="pen" spe="2"/>
                         </button>
-                        <button class="button is-small is-danger" href="#" wire:click="deleteServer({{ $server->id }})" wire:confirm='Are you sure you want to delete the Server "{{$server->name}}"?'
+                        <button class="button is-small is-danger" href="#" wire:click="deleteServer({{ $server->id }})" wire:confirm='Are you sure you want to delete the Server "{{$server->name}}"?'>
                             <x-icon i="trash" spe="2"/>
                         </button>
                     </td>

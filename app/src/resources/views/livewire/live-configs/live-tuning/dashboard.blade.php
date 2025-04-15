@@ -20,7 +20,7 @@
                         <button class="button is-small is-primary" href="#" wire:navigate>
                             <x-icon i="pen" spe="2"/>
                         </button>
-                        <button class="button is-small is-danger" href="#" wire:click="deleteConfig({{ $config->id }})" wire:confirm='Are you sure you want to delete the Config "{{$config->name}}"?'
+                        <button class="button is-small is-danger" href="#" wire:click="deleteConfig({{ $config->id }})" wire:confirm='Are you sure you want to delete the Config "{{$config->name}}"?'>
                             <x-icon i="trash" spe="2"/>
                         </button>
                     </td>
