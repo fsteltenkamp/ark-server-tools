@@ -3,14 +3,18 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Role;
 use App\Models\Server;
 use App\Models\Cluster;
 use App\Models\LiveTuning;
+use App\Models\Permission;
 use App\Models\DynamicConfig;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class User extends Authenticatable
 {
@@ -51,6 +55,16 @@ class User extends Authenticatable
         ];
     }
 
+    public function role(): BelongsTo
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function permissions(): HasManyThrough
+    {
+        return $this->hasManyThrough(Permission::class, Role::class);
+    }
+
     public function clusters()
     {
         return $this->hasMany(Cluster::class);
@@ -69,5 +83,11 @@ class User extends Authenticatable
     public function liveTunings()
     {
         return $this->hasMany(LiveTuning::class);
+    }
+
+    public function setRole(Role $role): void
+    {
+        $this->role()->associate($role);
+        $this->save();
     }
 }
