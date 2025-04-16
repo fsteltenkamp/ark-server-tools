@@ -25,9 +25,10 @@ class CreateAdminUser extends Command
     public function handle(): int
     {
         $this->info('Creating Admin Role if it does not exist...');
-        if (!Role::where('guard_name', 'superadmin')) {
+        if (!Role::getByStub('superadmin')) {
             Role::create([
                 'displayname' => 'Super Administrator',
+                'stub' => 'superadmin',
                 'description' => 'Has Access to all features and settings'
             ])->syncPermissions(Permission::all());
         }
@@ -36,7 +37,7 @@ class CreateAdminUser extends Command
             if ($this->option('force')) {
                 $u = User::where('email', 'admin@ark-server.tools')->first();
                 $u->password = Hash::make('admin');
-                $u->setRole('superadmin');
+                $u->setRole(Role::getByStub('superadmin'));
                 $u->save();
                 $this->info('Admin user restored successfully.');
                 return Command::SUCCESS;
@@ -51,7 +52,7 @@ class CreateAdminUser extends Command
             'email' => 'admin@ark-server.tools',
             'password' => Hash::make('admin'), // Use a secure password in production
         ]);
-        $u->setRole('superadmin');
+        $u->setRole(Role::getByStub('superadmin'));
         $u->save();
 
         $this->info('Admin user created successfully.');
